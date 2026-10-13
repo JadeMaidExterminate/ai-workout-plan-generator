@@ -1,0 +1,21 @@
+# Default configuration for ai-workout-plan-generator.
+# Override locally at ~/.config/ai-workout-plan-generator/user.toml.
+
+[app]
+name = "ai-workout-plan-generator"
+locale = "en-US"
+
+[models]
+# backend: "local" (onnxruntime, offline) | "remote" (opt-in HTTP)
+backend = "local"
+checkpoint_dir = "models/checkpoints"
+remote_url = ""
+max_plan_weeks = 16
+
+[planner]
+# default_split: "full_body" | "upper_lower" | "push_pull_legs" | "bro_split"
+default_split = "upper_lower"
+min_days_per_week = 2
+max_days_per_week = 6
+# Plans never prescribe work above this RPE on a recovery day.
+recovery_ceiling_rpe = 7.5
